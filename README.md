@@ -1,10 +1,10 @@
 ---
 title: Inst Inpaint
-emoji: 📊
+emoji: 🖌️
 colorFrom: purple
 colorTo: red
 sdk: gradio
-sdk_version: 3.24.1
+sdk_version: 3.39.0
 app_file: app.py
 pinned: false
 license: mit

@@ -14,7 +14,7 @@ DESCRIPTION = """
 EXAMPLES = [
     ["examples/kite-boy.png", "Remove the colorful kite", True],
     ["examples/cat-car.jpg", "Remove the car", True],
-    ["examples/bus-tree.jpg", "Remove the bus", True],
+    ["examples/bus-tree.jpg", "Remove the red bus", True],
     ["examples/cups.webp", "Remove the cup at the left", True],
     ["examples/woman-fantasy.jpg", "Remove the woman", True],
     ["examples/clock.png", "Remove the round clock at the center", True],
