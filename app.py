@@ -70,7 +70,7 @@ if __name__ == "__main__":
         ],
         allow_flagging="never",
         examples=constants.EXAMPLES,
-        cache_examples=True,
+        cache_examples=False,
         title=constants.TITLE,
         description=constants.DESCRIPTION,
     ).launch(share=True)
