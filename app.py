@@ -37,10 +37,10 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    gdown.download(id="1tp0aHAS-ccrIfNz7XrGTSdNIPNZjOVSp", output="models/")
-    with ZipFile("models/gqa_inpaint.zip", 'r') as zObject:
-        zObject.extractall(path="models/")
-    os.remove("models/gqa_inpaint.zip")
+    # gdown.download(id="1tp0aHAS-ccrIfNz7XrGTSdNIPNZjOVSp", output="models/")
+    # with ZipFile("models/gqa_inpaint.zip", 'r') as zObject:
+    #     zObject.extractall(path="models/")
+    # os.remove("models/gqa_inpaint.zip")
     
     parsed_config = OmegaConf.load(args.config)
     MODEL = instantiate_from_config(parsed_config["model"])
@@ -73,4 +73,4 @@ if __name__ == "__main__":
         cache_examples=True,
         title=constants.TITLE,
         description=constants.DESCRIPTION,
-    ).launch()
+    ).launch(share=True)
