@@ -18,7 +18,7 @@ def inference(image: np.ndarray, instruction: str, center_crop: bool):
         raise gr.Error("Instruction should start with 'Remove the' !")
     image = Image.fromarray(image)
     cropped_image, image = utils.preprocess_image(image, center_crop=center_crop)
-    output_image = MODEL.inpaint(image, instruction, num_steps=10, device="cpu", return_pil=True, seed=0)
+    output_image = MODEL.inpaint(image, instruction, num_steps=10, device="cuda", return_pil=True, seed=0)
     return cropped_image, output_image
 
 if __name__ == "__main__":
@@ -44,10 +44,10 @@ if __name__ == "__main__":
     
     parsed_config = OmegaConf.load(args.config)
     MODEL = instantiate_from_config(parsed_config["model"])
-    model_state_dict = torch.load(args.checkpoint, map_location="cpu")["state_dict"]
+    model_state_dict = torch.load(args.checkpoint, map_location="cuda")["state_dict"]
     MODEL.load_state_dict(model_state_dict)
     MODEL.eval()
-    MODEL.to("cpu")
+    MODEL.to("cuda")
 
     sample_image, sample_instruction, sample_step = constants.EXAMPLES[3]
 
